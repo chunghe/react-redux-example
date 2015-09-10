@@ -2,7 +2,7 @@
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import { addTodo } from './actions';
+import { addTodo, fetchTodos } from './actions';
 
 class AddTodo extends React.Component {
 
@@ -44,11 +44,13 @@ TodoList.propTypes = {
 
 class App extends React.Component {
   render() {
-    const {todos, dispatch} = this.props;
+    const {todos, dispatch, isFetching} = this.props;
     return (
       <div>    
         <AddTodo onAddClick={ text => dispatch(addTodo(text))} />
         <TodoList todos={todos} />
+        <button onClick={ () => dispatch(fetchTodos()) }>fetch</button>
+        {isFetching && <p>fetching...</p>}
       </div>
     )
   }
@@ -60,6 +62,7 @@ App.protoTypes = {
 
 function select (state) {
   return {
+    isFetching: state.isFetching,
     todos: state.todos
   }
 }
