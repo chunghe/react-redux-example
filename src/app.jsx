@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { addTodo } from './actions';
@@ -23,6 +23,10 @@ class AddTodo extends React.Component {
   }
 }
 
+AddTodo.protoTypes = {
+  onAddClick: PropTypes.func.isRequired
+}
+
 
 class TodoList extends React.Component {
   renderTodo(todo, index) {
@@ -34,6 +38,10 @@ class TodoList extends React.Component {
   }
 }
 
+TodoList.propTypes = {
+  todos: PropTypes.arrayOf(PropTypes.string).isRequired
+};
+
 class App extends React.Component {
   render() {
     const {todos, dispatch} = this.props;
@@ -44,6 +52,10 @@ class App extends React.Component {
       </div>
     )
   }
+}
+
+App.protoTypes = {
+  todos: PropTypes.arrayOf(PropTypes.string).isRequired
 }
 
 function select (state) {
