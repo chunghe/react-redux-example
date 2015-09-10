@@ -13,7 +13,8 @@ A working example helps me learn Redux.
 
 ## Examples
 
-1. [A very simple redux example with an input field to add todo](2a4360330ea12d42e9ca910edb751629cf499727)
+1. [A very simple redux example with an input field to add todo](https://github.com/chunghe/react-redux-example/commit/2a4360330ea12d42e9ca910edb751629cf499727)
+
 ## References
 [Official redux tutorial](https://rackt.github.io/redux/docs/recipes/ReducingBoilerplate.html)
 [Awesome redux](https://github.com/xgrommx/awesome-redux)
