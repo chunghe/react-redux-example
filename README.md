@@ -2,8 +2,8 @@
 
 
 React Redux example
-
 =====================
+
 A working example helps me learn Redux. 
 
 ## steps
